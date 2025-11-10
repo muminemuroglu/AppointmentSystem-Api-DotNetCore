@@ -3968,11 +3968,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/muminemuroglu/Documents/dotnet_core/RestApi/RestApi/RestApi.csproj",
+      "projectUniqueName": "/Users/muminemuroglu/Documents/AppointmentSystem-Api-DotNetCore/RestApi/RestApi/RestApi.csproj",
       "projectName": "RestApi",
-      "projectPath": "/Users/muminemuroglu/Documents/dotnet_core/RestApi/RestApi/RestApi.csproj",
+      "projectPath": "/Users/muminemuroglu/Documents/AppointmentSystem-Api-DotNetCore/RestApi/RestApi/RestApi.csproj",
       "packagesPath": "/Users/muminemuroglu/.nuget/packages/",
-      "outputPath": "/Users/muminemuroglu/Documents/dotnet_core/RestApi/RestApi/obj/",
+      "outputPath": "/Users/muminemuroglu/Documents/AppointmentSystem-Api-DotNetCore/RestApi/RestApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/muminemuroglu/.nuget/NuGet/NuGet.Config"

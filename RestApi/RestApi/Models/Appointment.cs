@@ -31,7 +31,7 @@ namespace RestApi.Models
         public int ServiceId { get; set; }
         public Service Service { get; set; } // Navigation property
 
-        [Required]
+     
         public DateTime AppointmentDate { get; set; }
 
         [Required]
