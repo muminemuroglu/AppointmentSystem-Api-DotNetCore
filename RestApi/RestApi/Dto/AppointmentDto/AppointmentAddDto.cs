@@ -19,7 +19,7 @@ namespace RestApi.Dto.AppointmentDto
         public long StaffId { get; set; }//Kimden randevu alıyor?
 
         [Required]
-        [WorkingHoursFutureDate] //KEndi oluşturduğumuz notasyon-bugünden büyük ve 9-17 saatleri arasında olacak kuralı
+        [WorkingHoursFutureDate] //Kendi oluşturduğumuz notasyon-bugünden büyük ve 9-17 saatleri arasında olacak kuralı
         public DateTime AppointmentDate { get; set; }
 
 

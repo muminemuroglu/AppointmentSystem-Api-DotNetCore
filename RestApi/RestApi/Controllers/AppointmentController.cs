@@ -24,5 +24,40 @@ namespace RestApi.Controllers
             var appointment = _appointmentService.Add(appointmentAddDto, UserId);
             return Ok(appointment);
         }
+
+        [HttpGet("list")]
+        [Authorize(Roles = "Staff")]
+        public ActionResult AppointmentList()
+        {
+            var UserId = User.FindFirst("id")?.Value;//
+            Console.WriteLine(UserId);
+            // bu UserId aslında uzman idsidir. Staff'a ait güncel randevuları listeleyeceğiz,
+            // bu listeleme sırasında şimdiki tarihten sonraki randevular gelmelidir.
+            var list = _appointmentService.ListUpcomingByStaff(UserId);
+            return Ok(list);
+        }
+
+        [HttpPatch("changeStatus")]
+        [Authorize(Roles = "Staff")]
+        public ActionResult ChangeStatus(AppointmentStatusChangeDto appointmentStatusChangeDto)
+        {
+            var UserId = User.FindFirst("id")?.Value;
+            var statusObj =_appointmentService.AppointmentChangeStatus(UserId, appointmentStatusChangeDto);
+            return Ok(statusObj);
+        }
+
+        [HttpGet("userList")]
+        [Authorize]
+        public ActionResult AppointmentUserList()
+        {
+            var UserId = User.FindFirst("id")?.Value;
+             var appointments = _appointmentService.AppointmentUserList(UserId);
+            return Ok(appointments);
+            
+        }
+
+
+
+
     }
 }

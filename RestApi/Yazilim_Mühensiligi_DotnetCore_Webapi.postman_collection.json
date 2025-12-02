@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "f00cc884-0325-4149-8e79-c263b354af43",
+		"name": "Yazilim_Mühensiligi_DotnetCore_Webapi",
+		"description": "Swagger UI:[http://localhost:5116/](http://localhost:5116/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49060678",
+		"_collection_link": "https://muminemuroglu-80612.postman.co/workspace/muminemuroglu's-Workspace~b472f406-b4ba-4434-899b-3f2497c997c5/collection/49060678-f00cc884-0325-4149-8e79-c263b354af43?action=share&source=collection_link&creator=49060678"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Email\" :\"mehmet@mail.com\",\n    \"Password\":\"aA12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user/login",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"FirstName\": \"Kaan\",\n    \"LastName\" : \"Bilirler\",\n    \"Email\" :\"kaan@mail.com\",\n    \"Password\" :\"aA12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user/register",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Service Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\" :\"Saç Boyama\",\n    \"Detail\" :\"Saç Boyama Tek Renk\",\n    \"DurationMinute\" : 60,\n    \"Price\": 300\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}Service/add",
+							"host": [
+								"{{url}}Service"
+							],
+							"path": [
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Service All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}Service/all",
+							"host": [
+								"{{url}}Service"
+							],
+							"path": [
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "Appointment Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ServiceId\" : 1,\n    \"StaffId\" :4,\n    \"AppointmentDate\" : \"2025-12-01T11:30:00+03:00\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}appointment/add",
+							"host": [
+								"{{url}}appointment"
+							],
+							"path": [
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Appointment List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}appointment/list",
+							"host": [
+								"{{url}}appointment"
+							],
+							"path": [
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Appointment User List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}appointment/userList",
+							"host": [
+								"{{url}}appointment"
+							],
+							"path": [
+								"userList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Appointment Change Status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"AppointmentId\" :3,\n    \"Status\" : \"Approved\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}appointment/changeStatus",
+							"host": [
+								"{{url}}appointment"
+							],
+							"path": [
+								"changeStatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFsaUBtYWlsLmNvbSIsImlkIjoiMyIsInJvbGUiOiJVc2VyIiwibmJmIjoxNzY0NjgyNDMwLCJleHAiOjE3NjQ2ODYwMzAsImlhdCI6MTc2NDY4MjQzMH0.NGRoEMWV1clO7yY62AmEvKvY2sQjnzFn22tppwVOKy4",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5116/api/"
+		}
+	]
+}
